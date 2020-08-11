@@ -18,4 +18,7 @@ def create_app():
     def test():
         return 'This is just a test'
 
+    from . import database
+    database.init_app(app)
+
     return app
