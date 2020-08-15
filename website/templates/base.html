@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
-    <link rel="stylesheet" href="../static/style.css" />
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{% block title %}{% endblock %} - Simple Blog</title>
   </head>
   <body>
     <div class="wrapper">
@@ -23,6 +22,9 @@
           </ul>
         </nav>
       </header>
+      <div class="content">
+        <h3>{% block header %}{% endblock %}</h3>
+      </div>
     </div>
   </body>
 </html>
