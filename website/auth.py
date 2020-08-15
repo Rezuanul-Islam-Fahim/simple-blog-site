@@ -17,9 +17,9 @@ def register():
         db = get_db()
         error = None
 
-        if username is None:
+        if not username:
             error = 'Username is required'
-        elif password is None:
+        elif not password:
             error = 'Password is required'
         elif db.execute(
             'SELECT id FROM user WHERE username = ?', (username,)
@@ -33,7 +33,7 @@ def register():
             )
             db.commit()
 
-            return redirect(url_for('auth.login'))
+            return redirect(url_for('auth.register'))
         
         flash(error)
     
