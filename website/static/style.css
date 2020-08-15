@@ -8,10 +8,10 @@ body {
     margin: auto;
     background-color: white;
     overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(59, 59, 59, 0.5);
 }
 
 header {
-    display: block;
     padding-top: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #e0e0e0;
