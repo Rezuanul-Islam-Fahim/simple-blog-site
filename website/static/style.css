@@ -1,0 +1,88 @@
+body {
+    background-color: #ebebeb;
+    margin: 0;
+}
+
+.wrapper {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(59, 59, 59, 0.5);
+}
+
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+header h2 {
+    display: inline-flex;
+    padding: 0;
+    padding-left: 20px;
+    margin: 0;
+    color: rgb(49, 49, 49);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav {
+    float: right;
+    overflow: hidden;
+    display: inline-flex;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 5px 20px 0 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 5px 0 5px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content {
+    padding: 30px;
+}
+
+.content h3 {
+    padding: 0 0 5px 0;
+    margin: 0;
+    color: rgb(49, 49, 49);
+    border-bottom: 1px solid #e0e0e0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content .main-content {
+    padding-top: 20px;
+}
+
+form {
+    text-align: center;
+}
+form input[type="text"], form input[type="password"] {
+    width: 60%;
+    margin: 0 auto 16px auto;
+    padding: 8px;
+    display: block;
+}
+
+form input[type="submit"] {
+    background-color:  #221e9e;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.4s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1f1d68;
+}
