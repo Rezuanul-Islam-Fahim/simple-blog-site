@@ -58,3 +58,31 @@ nav ul li a {
     border-bottom: 1px solid #e0e0e0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.content .main-content {
+    padding-top: 20px;
+}
+
+form {
+    text-align: center;
+}
+form input[type="text"], form input[type="password"] {
+    width: 60%;
+    margin: 0 auto 16px auto;
+    padding: 8px;
+    display: block;
+}
+
+form input[type="submit"] {
+    background-color:  #221e9e;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.4s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #1f1d68;
+}

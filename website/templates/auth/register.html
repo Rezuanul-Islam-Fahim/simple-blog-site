@@ -3,3 +3,13 @@
 {% block header %}
   {% block title %}Register{% endblock %}
 {% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <form>
+        <input name="username" type="text" id="username" placeholder="Username">
+        <input name="password" type="password" id="password" placeholder="Password">
+        <input type="submit" value="Register">
+    </form>
+</div>
+{% endblock %}
