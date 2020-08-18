@@ -80,3 +80,9 @@ def load_logged_in_user():
         ).fetchone()
     else:
         g.user = None
+
+
+@bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('test'))
