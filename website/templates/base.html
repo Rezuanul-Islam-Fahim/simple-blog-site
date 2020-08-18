@@ -19,8 +19,8 @@
             <li>{{ g.user['username'] }}</li>
             <li><a href="">Log Out</a></li>
             {% else %}
-            <li><a href="">Register</a></li>
-            <li><a href="">Login</a></li>
+            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
             {% endif %}
           </ul>
         </nav>
