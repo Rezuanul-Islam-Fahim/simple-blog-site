@@ -65,7 +65,7 @@ def login():
         else:
             session.clear()
             session['user_id'] = user['id']
-            return redirect(url_for('test'))
+            return redirect(url_for('index'))
 
     return render_template('auth/login.html')
 
@@ -85,4 +85,4 @@ def load_logged_in_user():
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('test'))
+    return redirect(url_for('index'))
