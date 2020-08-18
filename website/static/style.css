@@ -74,9 +74,9 @@ form input[type="text"], form input[type="password"] {
 }
 
 form input[type="submit"] {
-    background-color:  #221e9e;
+    background-color:  #154db4;
     color: white;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 20px;
@@ -84,5 +84,15 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #1f1d68;
+    background-color: #193f85;
+}
+
+.flash {
+    width: 60%;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    background-color: rgb(235, 154, 154);
+    border: 1px solid rgb(189, 98, 98);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
