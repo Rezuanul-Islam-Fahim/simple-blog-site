@@ -38,4 +38,9 @@ def create():
 
 @bp.route('/')
 def index():
-    return render_template('blog/index.html')
+    posts = get_db().execute(
+        'SELECT p.id, title, body, created, author_id, username FROM post p '
+        'JOIN user u ON author_id = u.id ORDER by created DESC'
+    ).fetchall()
+
+    return render_template('blog/index.html', posts=posts)
