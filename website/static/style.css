@@ -18,6 +18,10 @@ header {
     overflow: hidden;
 }
 
+header a {
+    text-decoration: none;
+}
+
 header h2 {
     display: inline-flex;
     padding: 0;
@@ -54,11 +58,21 @@ nav ul li a {
 }
 
 .content h3 {
+    display: inline;
     padding: 0 0 5px 0;
     margin: 0;
     color: rgb(49, 49, 49);
-    border-bottom: 1px solid #e0e0e0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.content .sub-header {
+    border-bottom: 1px solid #b8b8b8;
+}
+
+.content .sub-header a {
+    float: right;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
 }
 
 .content .main-content {
