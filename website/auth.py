@@ -1,3 +1,4 @@
+import functools
 from flask import (
     Blueprint, g, flash, redirect, session, request, url_for, render_template
 )
@@ -21,14 +22,14 @@ def register():
         elif not password:
             error = 'Password is required'
         elif db.execute(
-                'SELECT id FROM user WHERE username = ?', (username,)
+                'SELECT id FROM user WHERE username = ?', [username]
         ).fetchone() is not None:
             error = 'User {} is already registered'.format(username)
 
         if error is None:
             db.execute(
                 'INSERT INTO user (username, password) '
-                'VALUES (?, ?)', (username, generate_password_hash(password))
+                'VALUES (?, ?)',[username, generate_password_hash(password)]
             )
             db.commit()
 
@@ -46,7 +47,7 @@ def login():
         password = request.form['password']
         db = get_db()
         user = db.execute(
-            'SELECT id, password FROM user WHERE username = ?', (username,)
+            'SELECT id, password FROM user WHERE username = ?', [username]
         ).fetchone()
         error = None
 
@@ -85,3 +86,14 @@ def load_logged_in_user():
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for('index'))
+        
+        return view(**kwargs)
+    
+    return wrapped_view

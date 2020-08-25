@@ -3,11 +3,13 @@ from flask import (
 )
 
 from .database import get_db
+from .auth import login_required
 
 bp = Blueprint('blog', __name__)
 
 
 @bp.route('/create', methods=['GET', 'POST'])
+@login_required
 def create():
     if request.method == 'POST':
         title = request.form['title']
@@ -36,4 +38,4 @@ def create():
 
 @bp.route('/')
 def index():
-    return 'Hello world'
+    return render_template('blog/index.html')
