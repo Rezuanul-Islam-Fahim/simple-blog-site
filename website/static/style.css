@@ -17,6 +17,7 @@ header {
     border-bottom: 1px solid #e0e0e0;
     overflow: hidden;
 }
+
 header h2 {
     display: inline-flex;
     padding: 0;
@@ -25,6 +26,7 @@ header h2 {
     color: rgb(49, 49, 49);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 nav {
     float: right;
     overflow: hidden;
@@ -66,6 +68,7 @@ nav ul li a {
 form {
     text-align: center;
 }
+
 form input[type="text"], form input[type="password"] {
     width: 60%;
     margin: 0 auto 16px auto;
@@ -73,8 +76,14 @@ form input[type="text"], form input[type="password"] {
     display: block;
 }
 
+textarea {
+    display: block;
+    width: 60%;
+    margin: 0 auto 16px auto;
+}
+
 form input[type="submit"] {
-    background-color:  #154db4;
+    background-color: #154db4;
     color: white;
     padding: 10px 20px;
     border: none;

@@ -5,7 +5,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from .database import get_db
 
-
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 
@@ -22,7 +21,7 @@ def register():
         elif not password:
             error = 'Password is required'
         elif db.execute(
-            'SELECT id FROM user WHERE username = ?', (username,)
+                'SELECT id FROM user WHERE username = ?', (username,)
         ).fetchone() is not None:
             error = 'User {} is already registered'.format(username)
 
@@ -34,9 +33,9 @@ def register():
             db.commit()
 
             return redirect(url_for('auth.login'))
-        
+
         flash(error)
-    
+
     return render_template('auth/register.html')
 
 
