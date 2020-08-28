@@ -2,6 +2,8 @@ from flask import (
     Blueprint, g, request, url_for, render_template, redirect, flash
 )
 
+from werkzeug.exceptions import abort
+
 from .database import get_db
 from .auth import login_required
 
@@ -44,3 +46,33 @@ def index():
     ).fetchall()
 
     return render_template('blog/index.html', posts=posts)
+
+
+@bp.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    post = get_db().execute(
+        'SELECT * FROM post WHERE id = ?', [id]
+    ).fetchone()
+
+    if request.method == 'POST':
+        title = request.form['title']
+        body = request.form['body']
+        error = None
+        db = get_db()
+
+        if not title:
+            error = 'Title is required'
+        elif not body:
+            error = 'Body is required'
+        else:
+            db.execute(
+                'UPDATE post SET title = ?, body = ? WHERE id = ?',
+                [title, body, id]
+            )
+            db.commit()
+
+            return redirect(url_for('blog.index'))
+
+        flash(error)
+
+    return render_template('blog/update.html', post=post)
