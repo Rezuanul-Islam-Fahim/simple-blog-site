@@ -19,7 +19,7 @@
     <p class="post-body">{{ post['body'] }}</p>
     {% if g.user['id'] == post['author_id'] %}
     <div class="post-links">
-        <a href="">Edit</a>
+        <a href="{{ url_for('blog.update', id=post['id']) }}">Update</a>
         <a href="">Delete</a>
     </div>
     {% endif %}
