@@ -48,11 +48,25 @@ def index():
     return render_template('blog/index.html', posts=posts)
 
 
+def get_post(id):
+    post = get_db().execute(
+        'SELECT title, body, author_id FROM post WHERE id = ?', [id]
+    ).fetchone()
+
+    if (g.user is None):
+        abort(403)
+    elif (post is None):
+        abort(404, 'Post with id:{} doesn\'t exists'.format(id))
+    elif (g.user['id'] != post['author_id']):
+        abort(401, 'The server could not verify that you are authorized '
+            'to access the URL requested.')
+    else:
+        return post
+
+
 @bp.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
-    post = get_db().execute(
-        'SELECT * FROM post WHERE id = ?', [id]
-    ).fetchone()
+    post = get_post(id)
 
     if request.method == 'POST':
         title = request.form['title']
@@ -73,6 +87,16 @@ def update(id):
 
             return redirect(url_for('blog.index'))
 
-        flash(error)
+        if (error): flash(error)
 
     return render_template('blog/update.html', post=post)
+
+
+@bp.route('/delete/<int:id>', methods=['POST'])
+@login_required
+def delete(id):
+    get_post(id)
+    db = get_db()
+    db.execute('DELETE FROM post WHERE id = ?', [id])
+    db.commit()
+    return redirect(url_for('blog.index'))
