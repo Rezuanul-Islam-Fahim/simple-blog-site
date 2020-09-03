@@ -51,7 +51,7 @@ def index():
 @bp.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     post = get_db().execute(
-        'SELECT * FROM post WHERE id = ?', [id]
+        'SELECT title, body FROM post WHERE id = ?', [id]
     ).fetchone()
 
     if request.method == 'POST':
@@ -73,6 +73,6 @@ def update(id):
 
             return redirect(url_for('blog.index'))
 
-        flash(error)
+        if (error): flash(error)
 
     return render_template('blog/update.html', post=post)
