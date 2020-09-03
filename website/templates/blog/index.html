@@ -20,7 +20,9 @@
     {% if g.user['id'] == post['author_id'] %}
     <div class="post-links">
         <a href="{{ url_for('blog.update', id=post['id']) }}">Update</a>
-        <a href="">Delete</a>
+        <form style="text-align:left" method="POST" action="{{ url_for('blog.delete', id=post['id']) }}">
+            <input type="submit" value="Delete" onClick="return confirm('Are you sure?')">
+        </form>
     </div>
     {% endif %}
 </div>
