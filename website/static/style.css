@@ -14,7 +14,8 @@ body {
 
 header h2 {
   margin: 0 20px 0 20px;
-  color: rgb(49, 49, 49);
+  color: #1E62C9;
+  font-family: "Comic Sans MS", serif;
 }
 
 header nav a {
@@ -37,6 +38,20 @@ header nav ul {
 nav ul li {
   display: inline-block;
   padding: 0 5px 0 5px;
+}
+
+nav ul li a {
+  font-size: 13px;
+  background-color: #3786FD;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.8s ease-out;
+}
+
+nav ul li a:hover {
+  border-radius: 30px;
+  background-color: #1E62C9;
 }
 
 .content {
