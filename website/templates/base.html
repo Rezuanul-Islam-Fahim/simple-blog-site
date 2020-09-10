@@ -12,8 +12,8 @@
   <body>
     <div class="wrapper">
       <header>
-        <a href="{{ url_for('index') }}"><h2>Simple Blog</h2></a>
         <nav>
+          <a href="{{ url_for('index') }}"><h2>Simple Blog</h2></a>
           <ul>
             {% if g.user %}
             <li>{{ g.user['username'] }}</li>
@@ -24,12 +24,12 @@
             {% endif %}
           </ul>
         </nav>
-      </header>
-      <div class="content">
         <div class="sub-header">
           <h3>{% block header %}{% endblock %}</h3>
           {% block create_post %}{% endblock %}
         </div>
+      </header>
+      <div class="content">
         {% for message in get_flashed_messages() %}
         <div class="flash">{{ message }}</div>
         {% endfor %}
