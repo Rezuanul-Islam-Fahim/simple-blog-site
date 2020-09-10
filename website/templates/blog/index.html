@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block header %}
-{% block title %}Posts{% endblock %}
+{% block title %}Recent Posts{% endblock %}
 {% endblock %}
 
 {% block create_post %}
 {% if g.user %}
-<a href="{{ url_for('blog.create') }}">New Post</a>
+<a class="general-button" href="{{ url_for('blog.create') }}">New Post</a>
 {% endif %}
 {% endblock %}
 

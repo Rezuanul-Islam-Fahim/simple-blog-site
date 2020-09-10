@@ -5,6 +5,11 @@ body {
     "Lucida Sans", Arial, sans-serif;
 }
 
+p, a, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -69,14 +74,13 @@ header nav ul li {
 }
 
 header .sub-header {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
   padding: 40px 10px 0 10px;
 }
 
 header .sub-header h3 {
-  margin: 0;
+  color: #1E62C9;
+  font-family: "Comic Sans MS", serif;
 }
 
 .content {
