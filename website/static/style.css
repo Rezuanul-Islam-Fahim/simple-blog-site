@@ -1,162 +1,163 @@
 body {
-  background-color: #ebebeb;
-  margin: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+    background-color: #ebebeb;
+    margin: 0;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 p, a, h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
-a {
-  text-decoration: none;
+.general-button {
+    font-size: 13px;
+    background-color: #3786FD;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.4s ease;
 }
 
-a.general-button {
-  font-size: 13px;
-  background-color: #3786FD;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: 0.4s ease;
+.general-button:hover {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: #1E62C9;
 }
 
-a.general-button:hover {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  background-color: #1E62C9;
+.danger-button {
+    font-size: 13px;
+    background-color: #E13434;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: 0.4s ease;
 }
 
-a.danger-button {
-  font-size: 13px;
-  background-color: #D01F1F;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: 0.4s ease;
-}
-
-a.danger-button:hover {
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
-  background-color: #C11919;
+.danger-button:hover {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: #C11919;
 }
 
 .wrapper {
-  width: 80%;
-  margin: auto;
-  background-color: white;
-  box-shadow: 5px 5px 10px rgba(59, 59, 59, 0.5);
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(59, 59, 59, 0.5);
 }
 
 header h2 {
-  margin: 0 20px 0 20px;
-  color: #1E62C9;
-  font-family: "Comic Sans MS", serif;
+    margin: 0 20px 0 20px;
+    color: #1E62C9;
+    font-family: "Comic Sans MS", serif;
 }
 
 header nav {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0 10px 0;
 }
 
 header nav ul {
-  align-self: center;
-  list-style-type: none;
-  margin: 0 15px 0 0;
+    align-self: center;
+    list-style-type: none;
+    margin: 0 15px 0 0;
 }
 
 header nav ul li {
-  display: inline-block;
-  padding: 0 5px 0 5px;
+    display: inline-block;
+    padding: 0 5px 0 5px;
 }
 
 header .sub-header {
-  text-align: center;
-  padding: 40px 10px 0 10px;
+    text-align: center;
+    padding: 40px 10px 0 10px;
 }
 
 header .sub-header h3 {
-  color: #1E62C9;
-  font-family: "Comic Sans MS", serif;
+    font-size: 20px;
+    color: #1E62C9;
+    font-family: "Comic Sans MS", serif;
 }
 
 .content {
-  padding: 30px;
+    padding: 20px 30px 30px 30px;
 }
 
-.content h3 {
-  display: inline;
-  padding: 0 0 5px 0;
-  margin: 0;
-  color: rgb(49, 49, 49);
+.content #create-button {
+    padding-bottom: 20px;
+}
+
+.content #create-button a {
+    float: right;
+}
+
+.content .post {
+    padding: 15px 0;
+}
+
+.content .post .post-title {
+    margin-bottom: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(49, 49, 49);
+}
+
+.content .post .post-date {
+    color: #818181;
+    margin: 0;
+    font-size: 13px;
+}
+
+.content .post .post-body {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.content .post .post-links {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.content .post .post-links a {
+    margin-right: 10px;
 }
 
 form {
-  text-align: center;
+    text-align: center;
 }
 
 form input[type="text"],
 form input[type="password"] {
-  width: 60%;
-  margin: 0 auto 16px auto;
-  padding: 8px;
-  display: block;
+    width: 60%;
+    margin: 0 auto 16px auto;
+    padding: 8px;
+    display: block;
 }
 
-textarea {
-  display: block;
-  width: 60%;
-  margin: 0 auto 16px auto;
+form textarea {
+    display: block;
+    width: 60%;
+    margin: 0 auto 16px auto;
 }
 
 form input[type="submit"] {
-  background-color: #154db4;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 20px;
-  transition: 0.4s ease;
-}
-
-form input[type="submit"]:hover {
-  background-color: #193f85;
+    border: none;
+    cursor: pointer;
 }
 
 .flash {
-  width: 60%;
-  margin: 20px auto 0 auto;
-  padding: 20px;
-  background-color: rgb(235, 154, 154);
-  border: 1px solid rgb(189, 98, 98);
-  color: white;
+    width: 60%;
+    margin: 20px auto 0 auto;
+    padding: 20px;
+    background-color: rgb(235, 154, 154);
+    border: 1px solid rgb(189, 98, 98);
+    color: white;
 }
 
 hr {
-  border-top: 1px solid #e0e0e0;
-  margin: 0;
-}
-
-.post {
-  padding: 10px 0 10px 0;
-}
-
-.post .post-title {
-  margin: 0 0 5px 0;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgb(49, 49, 49);
-}
-
-.post .post-date {
-  color: #818181;
-  margin: 0;
-  font-size: 12px;
-}
-
-.post .post-body {
-  font-size: 15px;
+    border-bottom: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 0;
 }
