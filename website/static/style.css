@@ -10,6 +10,21 @@ p, a, h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 
+hr {
+    border-bottom: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 0;
+}
+
+.flash {
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(235, 154, 154);
+    border: 1px solid rgb(189, 98, 98);
+    color: white;
+}
+
 .general-button {
     font-size: 13px;
     background-color: #3786FD;
@@ -112,6 +127,7 @@ header .sub-header h3 {
 .content .post .post-body {
     margin-top: 15px;
     font-size: 15px;
+    letter-spacing: 1q;
 }
 
 .content .post .post-links {
@@ -145,19 +161,4 @@ form textarea {
 form input[type="submit"] {
     border: none;
     cursor: pointer;
-}
-
-.flash {
-    width: 60%;
-    margin: 20px auto 0 auto;
-    padding: 20px;
-    background-color: rgb(235, 154, 154);
-    border: 1px solid rgb(189, 98, 98);
-    color: white;
-}
-
-hr {
-    border-bottom: none;
-    border-top: 1px solid #e0e0e0;
-    margin: 0;
 }
