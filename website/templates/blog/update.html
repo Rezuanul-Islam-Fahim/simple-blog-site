@@ -6,10 +6,11 @@
 
 {% block content %}
 <div class="main-content">
-    <form method="POST">
-        <input type="text" name="title" placeholder="Title" value="{{ request.form['title'] or post['title'] }}">
-        <textarea name="body" rows="10" placeholder="Enter your post...">{{ request.form['body'] or post['body'] }}</textarea>
-        <input type="submit" value="Update">
-    </form>
+  <form method="POST">
+    <input type="text" name="title" placeholder="Title" value="{{ request.form['title'] or post['title'] }}">
+    <textarea name="body" rows="15"
+              placeholder="Enter your post...">{{ request.form['body'] or post['body'] }}</textarea>
+    <input class="general-button form-button" type="submit" value="Update">
+  </form>
 </div>
 {% endblock %}

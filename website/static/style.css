@@ -16,7 +16,7 @@ hr {
     margin: 0;
 }
 
-input {
+input, textarea {
     outline: none;
 }
 
@@ -159,9 +159,10 @@ form input[type="text"],
 form input[type="password"] {
     width: 400px;
     margin: 0 auto 16px auto;
-    padding: 15px 20px;
+    padding: 15px 18px;
     display: block;
     border-radius: 20px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     border: 1px solid #dcdcdc;
     box-sizing: border-box;
     background-color: #ebebeb;
@@ -176,17 +177,31 @@ form input[type="password"]:hover {
 form input[type="text"]:focus,
 form input[type="password"]:focus {
     border: 1px solid #c3c3c3;
-    background-color: #f5f5f5;
+    background-color: #f0f0f0;
+}
+
+form textarea {
+    width: 400px;
+    margin: 0 auto 16px auto;
+    padding: 15px 18px;
+    display: block;
+    border-radius: 20px;
+    border: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    background-color: #ebebeb;
+    transition: 0.4s ease;
+}
+
+form textarea:hover {
+    border: 1px solid #cdcdcd;
+}
+
+form textarea:focus {
+    border: 1px solid #c3c3c3;
+    background-color: #f0f0f0;
 }
 
 form .form-button {
     padding: 12px 25px !important;
     margin-bottom: 20px;
-}
-
-form textarea {
-    width: 400px;
-    display: block;
-    margin: 0 auto 16px auto;
-    box-sizing: border-box;
 }
