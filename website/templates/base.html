@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
-    />
-    <title>{% block title %}{% endblock %} - Simple Blog</title>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <a href="{{ url_for('index') }}"><h2>Simple Blog</h2></a>
-        <nav>
-          <ul>
-            {% if g.user %}
-            <li>{{ g.user['username'] }}</li>
-            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-            {% else %}
-            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
-            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
-            {% endif %}
-          </ul>
-        </nav>
-      </header>
-      <div class="content">
-        <div class="sub-header">
-          <h3>{% block header %}{% endblock %}</h3>
-          {% block create_post %}{% endblock %}
-        </div>
-        {% for message in get_flashed_messages() %}
-        <div class="flash">{{ message }}</div>
-        {% endfor %}
-        {% block content %}{% endblock %}
-      </div>
+  />
+  <title>{% block title %}{% endblock %} - Simple Blog</title>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <nav>
+      <a href="{{ url_for('index') }}"><h2>Simple Blog</h2></a>
+      <ul>
+        {% if g.user %}
+        <li>{{ g.user['username'] }}</li>
+        <li><a class="danger-button" href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        {% else %}
+        <li><a class="general-button" href="{{ url_for('auth.register') }}">Register</a></li>
+        <li><a class="general-button" href="{{ url_for('auth.login') }}">Login</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+    <div class="sub-header">
+      <h3>{% block header %}{% endblock %}</h3>
     </div>
-  </body>
+  </header>
+  <div class="content">
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+  </div>
+</div>
+</body>
 </html>

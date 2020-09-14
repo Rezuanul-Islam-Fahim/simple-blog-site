@@ -6,10 +6,10 @@
 
 {% block content %}
 <div class="main-content">
-    <form method="POST">
-        <input name="username" type="text" placeholder="Username" value="{{ request.form['username']}}">
-        <input name="password" type="password" placeholder="Password">
-        <input type="submit" value="Login">
-    </form>
+  <form method="POST">
+    <input name="username" type="text" placeholder="Username" value="{{ request.form['username']}}">
+    <input name="password" type="password" placeholder="Password">
+    <input class="general-button form-button" type="submit" value="Login">
+  </form>
 </div>
 {% endblock %}
