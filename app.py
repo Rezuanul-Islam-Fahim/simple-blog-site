@@ -18,13 +18,13 @@ def create_app():
     def test():
         return 'This is just a test'
 
-    from . import database
+    import database
     database.init_app(app)
 
-    from . import auth
+    import auth
     app.register_blueprint(auth.bp)
 
-    from . import blog
+    import blog
     app.register_blueprint(blog.bp)
     app.add_url_rule('/', 'index')
 

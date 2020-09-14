@@ -4,8 +4,8 @@ from flask import (
 
 from werkzeug.exceptions import abort
 
-from .database import get_db
-from .auth import login_required
+from database import get_db
+from auth import login_required
 
 bp = Blueprint('blog', __name__)
 
