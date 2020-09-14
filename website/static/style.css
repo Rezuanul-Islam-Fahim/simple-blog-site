@@ -68,7 +68,7 @@ input[type="submit"] {
     width: 80%;
     margin: auto;
     background-color: white;
-    box-shadow: 5px 5px 10px rgba(59, 59, 59, 0.5);
+    box-shadow: 0 0 8px rgba(59, 59, 59, 0.2);
 }
 
 header h2 {
