@@ -1,7 +1,6 @@
 from flask import (
     Blueprint, g, request, url_for, render_template, redirect, flash
 )
-
 from werkzeug.exceptions import abort
 
 from database import get_db
@@ -53,13 +52,12 @@ def get_post(id):
         'SELECT title, body, author_id FROM post WHERE id = ?', [id]
     ).fetchone()
 
-    if (g.user is None):
+    if g.user is None:
         abort(403)
-    elif (post is None):
+    elif post is None:
         abort(404, 'Post with id:{} doesn\'t exists'.format(id))
-    elif (g.user['id'] != post['author_id']):
-        abort(401, 'The server could not verify that you are authorized '
-            'to access the URL requested.')
+    elif g.user['id'] != post['author_id']:
+        abort(401, 'You are not authorized to access the URL requested.')
     else:
         return post
 

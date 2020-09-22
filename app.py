@@ -5,7 +5,6 @@ import database
 import auth
 import blog
 
-
 app = Flask(__name__, instance_relative_config=True)
 app.config.from_mapping(
     SECRET_KEY='DEV',
