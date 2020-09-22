@@ -6,12 +6,16 @@ from werkzeug.exceptions import abort
 from database import get_db
 from auth import login_required
 
+# Blog blueprint
 bp = Blueprint('blog', __name__)
 
 
 @bp.route('/create', methods=['GET', 'POST'])
 @login_required
 def create():
+    """ Post-create view for creating post and insert
+    into database and redirect to homepage """
+
     if request.method == 'POST':
         title = request.form['title']
         body = request.form['body']
@@ -39,6 +43,8 @@ def create():
 
 @bp.route('/')
 def index():
+    """ Index (Homepage) view for showing all posts """
+
     posts = get_db().execute(
         'SELECT p.id, title, body, created, author_id, username FROM post p '
         'JOIN user u ON author_id = u.id ORDER by created DESC'
@@ -48,6 +54,8 @@ def index():
 
 
 def get_post(id):
+    """ Get post for provided id """
+
     post = get_db().execute(
         'SELECT title, body, author_id FROM post WHERE id = ?', [id]
     ).fetchone()
@@ -64,6 +72,9 @@ def get_post(id):
 
 @bp.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
+    """ View for updating post and return to
+    home-page when successful """
+
     post = get_post(id)
 
     if request.method == 'POST':
@@ -93,8 +104,11 @@ def update(id):
 @bp.route('/delete/<int:id>', methods=['POST'])
 @login_required
 def delete(id):
+    """ A function for deleting post """
+
     get_post(id)
     db = get_db()
     db.execute('DELETE FROM post WHERE id = ?', [id])
     db.commit()
+
     return redirect(url_for('blog.index'))
