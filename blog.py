@@ -96,7 +96,8 @@ def update(id):
 
             return redirect(url_for('blog.index'))
 
-        if (error): flash(error)
+        if error:
+            flash(error)
 
     return render_template('blog/update.html', post=post)
 
@@ -104,7 +105,7 @@ def update(id):
 @bp.route('/delete/<int:id>', methods=['POST'])
 @login_required
 def delete(id):
-    """ A function for deleting post """
+    """ Function for deleting post """
 
     get_post(id)
     db = get_db()

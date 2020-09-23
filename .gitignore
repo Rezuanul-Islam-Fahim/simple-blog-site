@@ -1,4 +1,5 @@
 venv/
+simple_blog_site.egg-info/
 
 *.pyc
 __pycache__/
