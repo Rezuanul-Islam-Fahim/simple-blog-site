@@ -1,7 +1,7 @@
 # Simple Blog Site
 
 A simple blog website for blog posting. This website has authentication, database, post-create, post-update,
-post-delete features. Sqlite3 is used as the database for this website.
+post-delete features. `Sqlite3` is used as the database for this website.
 
 ## Installation
 
@@ -23,14 +23,14 @@ $ cd simple-blog-site
 
 ### Create Virtual Environment and Activate it
 
-**For macOS and linux:**
+For `macOS` and `linux`:
 
 ```bash
 $ python3 -m venv venv
 $ . venv/bin/activate
 ```
 
-**Or for windows PC:**
+Or for `windows` PC:
 
 ```bash
 $ py -3 -m venv venv
@@ -39,14 +39,14 @@ $ venv\Scripts\activate.bat
 
 ### Set Flask app and environment
 
-**For macOS and linux:**
+For `macOS` and `linux`:
 
 ```bash
 $ export FLASK_APP=app
 $ export FLASK_ENV=development
 ```
 
-**Or for windows PC:**
+Or for `windows` PC:
 
 ```bash
 $ set FLASK_APP=app
@@ -55,7 +55,7 @@ $ set FLASK_ENV=development
 
 ### Initialize Database
 
-To initialize database run this command from project's root folder:
+To initialize database run this command:
 
 ```bash
 $ flask init-db
@@ -63,10 +63,36 @@ $ flask init-db
 
 ### Run app
 
-After initializing database, run this command to run app in a local server:
+After initializing database, run this command to run app in a `local` server:
 
 ```bash
 $ flask run
 ```
 
 To view this app, open http://127.0.0.1:5000 or http://localhost:5000 in your browser.
+
+## License
+
+```bash
+MIT License
+
+Copyright (c) 2020 Rezuanul Islam Fahim
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
