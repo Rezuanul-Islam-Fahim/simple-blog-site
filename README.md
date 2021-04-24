@@ -3,6 +3,10 @@
 A simple blog website for blog posting. This website has authentication, database, post-create, post-update,
 post-delete features. `Sqlite3` is used as the database for this website.
 
+### Support this project
+
+[![GitHub stars](https://img.shields.io/github/stars/rezuanul-islam-fahim/simple-blog-site?style=social)](https://github.com/Rezuanul-Islam-Fahim/simple-blog-site/stargazers) [![GitHub forks](https://img.shields.io/github/forks/rezuanul-islam-fahim/simple-blog-site?style=social)](https://github.com/Rezuanul-Islam-Fahim/simple-blog-site/network/members) [![GitHub watchers](https://img.shields.io/github/watchers/rezuanul-islam-fahim/simple-blog-site?style=social)](https://github.com/Rezuanul-Islam-Fahim/simple-blog-site/watchers) [![License](https://img.shields.io/github/license/rezuanul-islam-fahim/simple-blog-site)](https://github.com/Rezuanul-Islam-Fahim/simple-blog-site/blob/stable/LICENSE)
+
 ## Installation
 
 * [Clone Repository](#clone-repository)
